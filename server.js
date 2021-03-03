@@ -18,7 +18,11 @@ app.use(cors(corsOptions))
 
 dotenv.config() 
 app.use('/posts', postRoutes)
-
+app.use('/login', (req,res) => {
+    res.send({
+        token:'test123'
+    })
+} )
 app.get('/',(req,res)=>{
     res.send('hello')
 })
